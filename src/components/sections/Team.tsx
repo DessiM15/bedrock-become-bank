@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Phone, User } from "lucide-react";
+import Image from "next/image";
+import { Phone } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import AnimatedText from "@/components/ui/AnimatedText";
 import { teamMembers } from "@/data/team";
@@ -33,13 +34,15 @@ export default function Team() {
             whileHover={{ y: -5 }}
             className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-tan/10 transition-all group border border-cream-dark"
           >
-            {/* Photo placeholder */}
-            <div className="aspect-[4/5] bg-gradient-to-br from-green-dark to-green-dark-light flex items-center justify-center relative overflow-hidden">
-              <div className="w-24 h-24 rounded-full bg-tan/20 flex items-center justify-center">
-                <User className="w-12 h-12 text-tan/60" />
-              </div>
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-green-dark/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="aspect-[4/5] relative overflow-hidden bg-gradient-to-br from-green-dark to-green-dark-light">
+              <Image
+                src={member.image}
+                alt={member.name}
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-green-dark/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
             <div className="p-6">

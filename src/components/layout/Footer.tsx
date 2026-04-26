@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { navigationItems } from "@/data/navigation";
 
@@ -12,13 +13,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-tan flex items-center justify-center">
-                <span className="text-green-dark font-heading font-bold text-lg">B</span>
-              </div>
-              <span className="font-heading text-xl font-bold text-cream">
-                Bedrock<span className="text-tan"> Financial</span>
-              </span>
+            <a href="/" className="flex items-center mb-4">
+              <Image
+                src="/images/logo-white.png"
+                alt="Bedrock Financial Planning"
+                width={180}
+                height={44}
+                className="h-9 w-auto"
+              />
             </a>
             <p className="text-cream-dark/70 text-sm leading-relaxed">
               Empowering families to take control of their financial future

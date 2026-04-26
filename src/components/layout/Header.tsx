@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { navigationItems } from "@/data/navigation";
 import Button from "@/components/ui/Button";
@@ -37,14 +38,15 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-tan flex items-center justify-center">
-            <span className="text-green-dark font-heading font-bold text-lg">B</span>
-          </div>
-          <span className="font-heading text-xl font-bold text-cream group-hover:text-tan transition-colors">
-            Bedrock
-            <span className="text-tan group-hover:text-tan-light"> Financial</span>
-          </span>
+        <a href="/" className="flex items-center group">
+          <Image
+            src="/images/logo-white.png"
+            alt="Bedrock Financial Planning"
+            width={200}
+            height={48}
+            className="h-10 w-auto group-hover:opacity-90 transition-opacity"
+            priority
+          />
         </a>
 
         {/* Desktop Nav */}
