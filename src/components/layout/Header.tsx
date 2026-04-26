@@ -42,9 +42,9 @@ export default function Header() {
           <Image
             src="/images/logo-white.png"
             alt="Bedrock Financial Planning"
-            width={200}
-            height={48}
-            className="h-10 w-auto group-hover:opacity-90 transition-opacity"
+            width={280}
+            height={68}
+            className="h-14 w-auto group-hover:opacity-90 transition-opacity"
             priority
           />
         </a>

@@ -17,9 +17,9 @@ export default function Footer() {
               <Image
                 src="/images/logo-white.png"
                 alt="Bedrock Financial Planning"
-                width={180}
-                height={44}
-                className="h-9 w-auto"
+                width={240}
+                height={58}
+                className="h-12 w-auto"
               />
             </a>
             <p className="text-cream-dark/70 text-sm leading-relaxed">
