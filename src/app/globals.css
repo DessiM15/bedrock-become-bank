@@ -1,26 +1,171 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-tan: #A38D6D;
+  --color-tan-light: #C4B293;
+  --color-tan-dark: #8A7558;
+  --color-green-dark: #0B2412;
+  --color-green-dark-light: #153a22;
+  --color-cream: #FFFDF7;
+  --color-cream-dark: #F5F0E8;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-green-dark);
+  color: var(--color-cream);
+  overflow-x: hidden;
+}
+
+/* Heading font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-green-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tan);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tan-light);
+}
+
+/* Prose styling for blog articles */
+.prose-bedrock {
+  color: var(--color-cream);
+  line-height: 1.8;
+}
+
+.prose-bedrock h1,
+.prose-bedrock h2,
+.prose-bedrock h3,
+.prose-bedrock h4 {
+  font-family: var(--font-heading);
+  color: var(--color-cream);
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  line-height: 1.3;
+}
+
+.prose-bedrock h1 { font-size: 2.25rem; }
+.prose-bedrock h2 { font-size: 1.75rem; }
+.prose-bedrock h3 { font-size: 1.375rem; }
+
+.prose-bedrock p {
+  margin-bottom: 1.25em;
+  color: var(--color-cream-dark);
+}
+
+.prose-bedrock a {
+  color: var(--color-tan-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-bedrock a:hover {
+  color: var(--color-tan);
+}
+
+.prose-bedrock strong {
+  color: var(--color-cream);
+  font-weight: 600;
+}
+
+.prose-bedrock ul,
+.prose-bedrock ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+  color: var(--color-cream-dark);
+}
+
+.prose-bedrock li {
+  margin-bottom: 0.5em;
+}
+
+.prose-bedrock ul li::marker {
+  color: var(--color-tan);
+}
+
+.prose-bedrock ol li::marker {
+  color: var(--color-tan);
+}
+
+.prose-bedrock blockquote {
+  border-left: 3px solid var(--color-tan);
+  padding-left: 1.25em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: var(--color-cream-dark);
+}
+
+.prose-bedrock hr {
+  border-color: var(--color-green-dark-light);
+  margin: 2em 0;
+}
+
+/* Light prose variant for cream background sections */
+.prose-bedrock-light {
+  color: var(--color-green-dark);
+  line-height: 1.8;
+}
+
+.prose-bedrock-light h1,
+.prose-bedrock-light h2,
+.prose-bedrock-light h3,
+.prose-bedrock-light h4 {
+  font-family: var(--font-heading);
+  color: var(--color-green-dark);
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  line-height: 1.3;
+}
+
+.prose-bedrock-light p {
+  margin-bottom: 1.25em;
+  color: var(--color-green-dark-light);
+}
+
+.prose-bedrock-light a {
+  color: var(--color-tan-dark);
+  text-decoration: underline;
+}
+
+.prose-bedrock-light strong {
+  color: var(--color-green-dark);
+}
+
+.prose-bedrock-light ul,
+.prose-bedrock-light ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+  color: var(--color-green-dark-light);
+}
+
+.prose-bedrock-light li::marker {
+  color: var(--color-tan-dark);
+}
+
+.prose-bedrock-light blockquote {
+  border-left: 3px solid var(--color-tan-dark);
+  padding-left: 1.25em;
+  margin: 1.5em 0;
+  font-style: italic;
 }
